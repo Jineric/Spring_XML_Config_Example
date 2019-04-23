@@ -24,13 +24,15 @@
 
     <bean id="myCricketCoach"
           class="com.jineric.Spring_XLM_Config_Example.CricketCoach">
+        <!-- literal value injection -->
+        <property name="emailAddress" value="jineric@somehwere.com"/>
+
+        <property name="team" value="Stormstroopers"/>
 
         <!-- set up setter injection -->
         <property name="fortuneService" ref="myFortuneService"/>
-<!--        <constructor-arg ref="myFortuneService"/>-->
     </bean>
 </beans>
-
 
 
 

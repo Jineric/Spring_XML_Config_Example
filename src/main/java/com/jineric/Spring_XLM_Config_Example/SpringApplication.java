@@ -3,7 +3,7 @@ package com.jineric.Spring_XLM_Config_Example;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 //@SpringBootApplication
-public class SpringBeanExampleApplication {
+public class SpringApplication {
     public static void main(String[] args) {
 //
 //        SpringApplication.run(SpringBeanExampleApplication.class, args);
@@ -31,6 +31,10 @@ public class SpringBeanExampleApplication {
         System.out.println(theCoach.getDailyWorkout());
 
         System.out.println(theCoach.getDailyFortune());
+
+        System.out.println(theCoach.getEmailAddress());
+
+        System.out.println(theCoach.getTeam());
 
         context.close();
     }
