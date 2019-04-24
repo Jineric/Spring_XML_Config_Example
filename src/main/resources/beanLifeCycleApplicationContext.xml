@@ -7,7 +7,6 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="sport.properties"/>
     <!-- Define your beans here -->
 
     <!-- define the dependency -->
@@ -16,21 +15,12 @@
     </bean>
 
     <bean id="myCoach"
-          class="com.jineric.Spring_XLM_Config_Example.TrackCoach">
-
+          class="com.jineric.Spring_XLM_Config_Example.TrackCoach"
+          init-method="doMyStartUpStuff"
+          destroy-method="doMyCleanUpStuff"
+    >
         <!-- set up constructor injection -->
         <constructor-arg ref="myFortuneService"/>
-    </bean>
-
-    <bean id="myCricketCoach"
-          class="com.jineric.Spring_XLM_Config_Example.CricketCoach">
-        <!-- literal value injection -->
-        <property name="emailAddress" value="${foo.email}"/>
-
-        <property name="team" value="${foo.team}"/>
-
-        <!-- set up setter injection -->
-        <property name="fortuneService" ref="myFortuneService"/>
     </bean>
 </beans>
 
